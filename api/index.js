@@ -11,10 +11,11 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
+
 // then express and cors
 app.use(express.json());
 app.use(cors({
-    origin: ["https://localhost:3000"],
+    origin: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
@@ -53,8 +54,8 @@ app.use('/images/', express.static('images'));
 
 // Create the ssl server
 const sslServer = https.createServer({
-    key: fs.readFileSync('/Users/yourname/key.pem'),
-    cert: fs.readFileSync('/Users/yourname/cert.pem')
+    key: fs.readFileSync('/Users/anastasia/key.pem'),
+    cert: fs.readFileSync('/Users/anastasia/cert.pem')
 }, app);
 
 // listen on port 33123 creating the tables in models in the process

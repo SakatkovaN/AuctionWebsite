@@ -54,8 +54,8 @@ app.use('/images/', express.static('images'));
 
 // Create the ssl server
 const sslServer = https.createServer({
-    key: fs.readFileSync('/Users/anastasia/key.pem'),
-    cert: fs.readFileSync('/Users/anastasia/cert.pem')
+    key: fs.readFileSync('~/key.pem'),
+    cert: fs.readFileSync('~/cert.pem')
 }, app);
 
 // listen on port 33123 creating the tables in models in the process
